@@ -1,7 +1,7 @@
 <?php 
 $server = "127.0.0.1";
 $user="root";
-$pass="rootroot";
+$pass="Root123@";
 $dbName="sapressiDB";
 
 $mysqli=new mysqli($server,$user,$pass,$dbName);

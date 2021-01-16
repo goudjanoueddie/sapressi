@@ -30,9 +30,9 @@ Ext.define('Jdeveloper.view.main.MainController', {
 
     },
 
-    onLogoutFailure:function(conn,respnse,options,eOpts){
+    onLogoutFailure:function(conn,response,options,eOpts){
 
-        Jdeveloper.util.Util.showErrorMsg(conn,responseText);
+        Jdeveloper.util.Util.showErrorMsg(conn.responseText);
 
     }
 

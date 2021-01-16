@@ -10,6 +10,7 @@ Ext.define('Jdeveloper.Application', { //1
 
    views:[ //3
         'login.Login'
+        
     ],
 
   /*   controllers:[ //4
@@ -41,7 +42,9 @@ Ext.define('Jdeveloper.Application', { //1
                 afteranimate:function(el, startTime, eOpts){
                     
                     //console.log('launch');
-                    Ext.widget('login-dialog');
+                    //Ext.widget('login-dialog');
+                    //Ext.widget('app-main');
+                    Ext.create('Jdeveloper.view.main.Main');
                 }
             }
         })
