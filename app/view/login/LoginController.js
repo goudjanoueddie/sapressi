@@ -9,14 +9,14 @@ Ext.define('Jdeveloper.view.login.LoginController',{
 
         ],
 
-        onTextFieldSpecialKey:function(field,e,options){
+        onTextFieldSpecialKey:function(field, e, options){
 
                 if(e.getKey() === e.ENTER){
                         this.doLogin();
                 }
         },
 
-        onTextFieldKeyPress:function(field,e,options){
+        onTextFieldKeyPress:function(field, e, options){
 
                 var charCode = e.getCharCode(),
                 me = this;
@@ -40,16 +40,16 @@ Ext.define('Jdeveloper.view.login.LoginController',{
 
         },
 
-        onButtonClickAnnuler:function(button,e,options){
+        onButtonClickAnnuler:function(button, e, options){
                 
                 
                 this.lookupReference('form').reset();
 
         },
 
-        onButtonClickConnexion:function(button,e,options){
+        onButtonClickConnexion:function(button, e, options){
 
-                var me=this;
+                var me = this;
                 if(me.lookupReference('form').isValid()){
                         me.doLogin();
                 }
@@ -58,22 +58,55 @@ Ext.define('Jdeveloper.view.login.LoginController',{
 
         doLogin:function(){
                 
-                var me=this,
+                var me = this,
                 form = me.lookupReference('form');
 
-                this.getView().mask('Authentification ... Patientez s\'il vousp lait');
-                form.submit({
+                this.getView().mask('Authentification ... Patientez sil vousp plait');
+                form.connexion({
                         
-                        clientValidation:true,
-                        url:'php/security/login.php',
-                        scope:me,
-                        success:'onLoginSuccess',
-                        failure:'onLoginFailure'
-                });
+                        clientValidation: true,
+                        url: 'php/security/login.php',
+                        scope: me,
+                        success: 'onLoginSuccess',
+                        failure: 'onLoginFailure'
+                        });
         },
 
-        onLoginFailure:function(form,action){
-                           
+        onLoginFailure:function(form, action){
+
+                var result = Ext.JSON.decode(action.response.responseText, true); 
+
+                if (!result){   
+                   result = {};      
+                   result.success = false;
+
+                   result.msg = action.response.responseText;  
+                }  
+                
+                switch (action.failureType) {  
+                    case Ext.form.action.Action.CLIENT_INVALID:  //#5          
+                    Ext.Msg.show({            
+                        title:'Error!',           
+                         msg: 'Form fields may not be submitted with invalid values', 
+                         icon: Ext.Msg.ERROR, buttons: Ext.Msg.OK       
+                         });     
+                     break;     
+                     case Ext.form.action.Action.CONNECT_FAILURE:  //#6        
+                     Ext.Msg.show({            
+                             title:'Error!', 
+                             msg: 'Form fields may not be submitted with invalid values', 
+                             icon: Ext.Msg.ERROR, buttons: Ext.Msg.OK       
+                         });         
+                      break;      
+                      case Ext.form.action.Action.SERVER_INVALID:  //#7          
+                      Ext.Msg.show({            
+                              title:'Error!',            
+                              msg: result.msg, //#8            
+                              icon: Ext.Msg.ERROR,            
+                              buttons: Ext.Msg.OK       
+                         });
+
+              /*             
                 this.getView().unmask();
 
                 var result = Jdeveloper.util.Util.decodeJSON(action.response.responseText);
@@ -88,13 +121,13 @@ Ext.define('Jdeveloper.view.login.LoginController',{
                         break;
                         case Ext.form.action.Action.SERVER_INVALID:
                                 //console.log(action);
-                                Jdeveloper.util.Util.showErrorMsg(result.msg);
+                                Jdeveloper.util.Util.showErrorMsg(result.msg);*/
                 }
         },
 
-        onLoginSuccess:function(form,action){
+        onLoginSuccess: function(form, action){
 
-                this.getView().unmask();
+             //   this.getView().unmask();
 
                 this.getView().close();
                 Ext.create('Jdeveloper.view.main.Main');
