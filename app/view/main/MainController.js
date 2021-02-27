@@ -9,7 +9,9 @@ Ext.define('Jdeveloper.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
     requires: [
-        'Ext.window.MessageBox'
+        //'Ext.window.MessageBox'
+        'Jdeveloper.util.Util'
+        
     ],
 
     alias: 'controller.main',
@@ -34,17 +36,31 @@ Ext.define('Jdeveloper.view.main.MainController', {
 
         Jdeveloper.util.Util.showErrorMsg(conn.responseText);
 
-    }
-
-    /*
-    onClickButton: function () {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
     },
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
+
+    onLogoutSuccess:function(conn,response,options,eOpts){
+
+        var result=Jdeveloper.util.Util.decodeJSON(conn.responseText);
+
+        if(result.success){
+
+            console.log(conn);
+
+            this.getView().destroy();
+            Window.location.reload();
+
+
+        }else{
+
+            //var result=Jdeveloper.util.Util.showErrorMsg(result.msg);
+            Jdeveloper.util.Util.showErrorMsg(result.msg);
+            
+
         }
+
+        
+        
     }
-    */
+
 });

@@ -15,12 +15,10 @@ $pass = stripslashes($pass);
 $userName = $mysqli -> real_escape_string($userName);
 $sql= "SELECT * FROM user WHERE userName='$userName'";
 
-$resultDB=$mysqli ->query($sql);
+ if($resultDB=$mysqli ->query($sql)){
 
-//if($resultDB=$mysqli ->query($sql)){
 
-    $count = mysqli_num_rows($resultDB);
-   // $count = $resultDb->num_rows;
+    $count = $resultDb -> num_rows;
 
     if($count ==1){
         
@@ -51,7 +49,7 @@ $resultDB=$mysqli ->query($sql);
     }
     $resultDB ->close();
 
-//}
+}
 
 /* close connection */
 $mysqli->close();
