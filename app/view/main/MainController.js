@@ -28,6 +28,12 @@ Ext.define('Jdeveloper.view.main.MainController', {
 
         });
 
+    },
+
+    onLogoutFailure:function(conn,response,options,eOpts){
+
+        Jdeveloper.util.Util.showErrorMsg(conn.responseText);
+
     }
 
     /*

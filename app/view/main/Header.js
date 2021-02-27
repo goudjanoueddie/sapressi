@@ -22,7 +22,7 @@ Ext.define('Jdeveloper.view.main.Header',{
         },{
             xtype: 'tbfill' //#9
         },{
-            xtype: 'translation' //#10
+            //xtype: 'translation' //#10
         },{
             xtype: 'tbseparator' //#11
         },{

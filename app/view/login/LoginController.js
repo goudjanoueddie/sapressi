@@ -61,8 +61,8 @@ Ext.define('Jdeveloper.view.login.LoginController',{
                 var me = this,
                 form = me.lookupReference('form');
 
-                this.getView().mask('Authentification ... Patientez sil vousp plait');
-                form.connexion({
+                this.getView().mask('Authentification ... Patientez s\'il vousp plait');
+                form.submit({
                         
                         clientValidation: true,
                         url: 'php/security/login.php',

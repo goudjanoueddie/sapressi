@@ -61,7 +61,7 @@ Ext.define('Jdeveloper.view.login.Login',{
                     inputType:'password',
                     name:'password',
                     fieldLabel:'Password',
-                    //id: 'password',
+                    id: 'password',
                     maxLength:15,
 
 
