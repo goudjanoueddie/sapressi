@@ -42,8 +42,8 @@ Ext.define('Jdeveloper.Application', { //1
                 afteranimate:function(el, startTime, eOpts){
                     
                     //console.log('launch');
-                    //Ext.widget('login-dialog');
-                    Ext.widget('app-main');
+                    Ext.widget('login-dialog');
+                    //Ext.widget('app-main');
                     //Ext.create('Jdeveloper.view.main.Main');
                     
                 }
