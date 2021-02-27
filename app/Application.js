@@ -43,9 +43,9 @@ Ext.define('Jdeveloper.Application', { //1
                     
                     //console.log('launch');
                     //Ext.widget('login-dialog');
-                    //Ext.widget('app-main');
-                    Ext.create('Jdeveloper.view.main.Main');
-                    //Ext.define('Jdeveloper.view.main.Main');
+                    Ext.widget('app-main');
+                    //Ext.create('Jdeveloper.view.main.Main');
+                    
                 }
             }
         })
