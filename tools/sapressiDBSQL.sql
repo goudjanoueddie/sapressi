@@ -51,21 +51,14 @@ CREATE TABLE IF NOT EXISTS `clients` (
 `adresse` VARCHAR(100) NOT NULL,
 `telephone` VARCHAR(100) NOT NULL,
 `courriel` VARCHAR(100) NOT NULL,
-`localisation` VARCHAR(100) NOT NULL,
-`activites` VARCHAR(300) NOT NULL,
-`correspondant` VARCHAR(100) NOT NULL,
-`fonction_correspondant` VARCHAR(100) NOT NULL,
-`contact_correspondant` VARCHAR(100) NOT NULL,
-`courriel_correspondant` VARCHAR(100) NOT NULL,
 PRIMARY KEY (`id_clients`)
 )
 ENGINE =InnoDB;
 
 CREATE TABLE IF NOT EXISTS `prospection`(
 `id_prospection` INT NOT NULL AUTO_INCREMENT,
-`date_prospection` DATE NOT NULL,
-`objectif_prospection` VARCHAR(400),
-`besoins_attente_client` VARCHAR(400),
+`date_naissance` DATE NOT NULL,
+`observation` VARCHAR(200),
 `type` ENUM('telephone','courriel','presentiel'),
 `id_commerciaux` INT NOT NULL,
 `id_clients` INT NOT NULL,
@@ -100,15 +93,13 @@ CREATE TABLE IF NOT EXISTS `factures`(
 `id_facture` INT NOT NULL AUTO_INCREMENT,
 `date_edition` DATE NOT NULL,
 `montant` DOUBLE NOT NULL,
-`id_commande` INT NOT NULL,
-PRIMARY KEY (`id_facture`),
-CONSTRAINT `fk_Commande`
-FOREIGN KEY (`id_commande`)
-REFERENCES `commandes` (`id_commande`)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
+PRIMARY KEY (`id_facture`)
 )
 ENGINE=InnoDB;
+
+
+describe prospection;
+
 
 INSERT INTO `groupuser` (`name`) VALUES ('admin');
 
