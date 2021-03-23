@@ -9,7 +9,7 @@ Ext.define('Jdeveloper.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
     requires: [
-        //'Ext.window.MessageBox'
+        
         'Jdeveloper.util.Util'
         
     ],
@@ -45,15 +45,14 @@ Ext.define('Jdeveloper.view.main.MainController', {
 
         if(result.success){
 
-            console.log(conn);
-
+        
             this.getView().destroy();
             Window.location.reload();
 
 
         }else{
 
-            //var result=Jdeveloper.util.Util.showErrorMsg(result.msg);
+            
             Jdeveloper.util.Util.showErrorMsg(result.msg);
             
 

@@ -1,6 +1,9 @@
 Ext.define('Jdeveloper.view.login.CapsLockTooltip',{
     extend:'Ext.tip.QuickTip',
     xtype:'capslocktooltip',
+    requires:[
+        'Jdeveloper.view.locale.Translation'
+    ],
     target:'password',
     anchor:'top',
     anchorOffset:0,
@@ -8,11 +11,12 @@ Ext.define('Jdeveloper.view.login.CapsLockTooltip',{
     dismissDelay:0,
     autoHide:false,
 
-    title:'<div class="fa fa-exclamation-triangle">Touche Majuscule active</div>',
+    /*title:'<div class="fa fa-exclamation-triangle">'+ translations.capsLockTitle + '</div>',
 
-    html: '<div>Avoir la touche majuscule active peut entrainer ' +
-            'un mot de passe incorrecte</div><br/>' +
-            '<div>Assurez vous de bien rentrer vos informations ' 
+    html: '<div>'+ translations.capsLockMsg1 +
+    translations.capsLockMsg2 + '</div><br/>' +
+    '<div>'+ translations.capsLockMsg3 +
+    translations.capsLockMsg4 + '</div>' */
             
 
 

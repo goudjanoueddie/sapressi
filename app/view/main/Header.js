@@ -3,7 +3,7 @@ Ext.define('Jdeveloper.view.main.Header',{
     xtype:'appheader',
 
     requires:[
-        //'Jdeveloper.view.locale.Translation'
+        'Jdeveloper.view.locale.Translation'
     ],
 
     ui:'footer',
@@ -22,13 +22,14 @@ Ext.define('Jdeveloper.view.main.Header',{
         },{
             xtype: 'tbfill' //#9
         },{
-            //xtype: 'translation' //#10
+            xtype: 'translation' //#10
         },{
             xtype: 'tbseparator' //#11
         },{
             xtype: 'button', //#12
             itemId: 'logout', //#13
-            text: 'Logout',
+            //text: translations.logout,
+            text: "logout",
             reference: 'logout', //#14
             iconCls: 'fa fa-sign-out fa-lg buttonIcon', //#15
 

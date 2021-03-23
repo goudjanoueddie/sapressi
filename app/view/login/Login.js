@@ -5,7 +5,8 @@ Ext.define('Jdeveloper.view.login.Login',{
     xtype:'login-dialog',
 
     requires:[
-        'Jdeveloper.view.login.LoginController'
+        'Jdeveloper.view.login.LoginController',
+        'Jdeveloper.view.locale.Translation'
     ],
 
     controller:'login',
@@ -19,11 +20,12 @@ Ext.define('Jdeveloper.view.login.Login',{
     },
 
     iconCls:'fa fa-key fa-lg',
-    title:'Login',
+    //title:translations.login,
+    title:"login",
     closeAction:'hide',
     closable:false,
     draggable:false,
-    resizable:false, //13
+    resizable:false, 
 
     items:[
 
@@ -53,14 +55,16 @@ Ext.define('Jdeveloper.view.login.Login',{
 
                 {
                     name:'user',
-                    fieldLabel:'User',
+                    //fieldLabel:translations.user,
+                    fieldLabel:"utilisateur",
                     vtype:'alphanum',
                     maxLength:25
                 },
                 {
                     inputType:'password',
                     name:'password',
-                    fieldLabel:'Password',
+                    //fieldLabel:translations.password,
+                    fieldLabel:"Mot de Passe",
                     id: 'password',
                     maxLength:15,
 
@@ -80,20 +84,26 @@ Ext.define('Jdeveloper.view.login.Login',{
                     xtype:'toolbar',
                     dock:'bottom',
                     items:[
+
+                        {
+                            xtype:'translation'
+                        },
                         {
                             xtype:'tbfill'
                         },
                         {
                             xtype:'button',
                             iconCls:'fa fa-times fa-lg',
-                            text:'Annuler',
+                            //text:translations.cancel,
+                            text:"cancel",
                             listeners:{click:'onButtonClickAnnuler'}
                         },
                         {
                             xtype:'button',
                             formBind:true,
                             iconCls:'fa fa-sign-in fa-lg',
-                            text:'Connexion',
+                            //text:translations.submit,
+                            text:"Connexion",
                             listeners:{click:'onButtonClickConnexion'}
                         }
                         

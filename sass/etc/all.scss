@@ -1,4 +1,5 @@
 @import "fontAwesome/font-awesome";
+@import "flagIcons";
 @import "iconColors";
 
 .x-mask.splashscreen{
@@ -35,7 +36,6 @@
 .x-splash-icon{
 
     background-image: url('images/app/sappressilogo.png') !important;
-    //background-image: url('../../../resources/images/app/sappressi_logo.gif') !important;
     margin-top: -30px;
     height:150px;
     width:326 px;

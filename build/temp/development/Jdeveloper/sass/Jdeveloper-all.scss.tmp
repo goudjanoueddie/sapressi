@@ -728,6 +728,8 @@ $include-extthemeneptune-toolbar-paging: true;
 $include-extthemeneptune-toolbar-toolbar: true;
 $include-jdeveloper-application: true;
 $include-jdeveloper-util-util: true;
+$include-jdeveloper-view-locale-translation: true;
+$include-jdeveloper-view-locale-translationcontroller: true;
 $include-jdeveloper-view-login-capslocktooltip: true;
 $include-jdeveloper-view-login-login: true;
 $include-jdeveloper-view-login-logincontroller: true;

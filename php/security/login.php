@@ -16,10 +16,7 @@ $sql= "SELECT * FROM user WHERE userName='$userName'";
 
 $resultDB=$mysqli ->query($sql);
 
-//if($resultDB=$mysqli ->query($sql)){
-
 $count = mysqli_num_rows($resultDB);
-// $count = $resultDb->num_rows;
 
 if($count ==1){
 $record = $resultDB->fetch_assoc();

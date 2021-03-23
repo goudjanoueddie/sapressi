@@ -106,28 +106,10 @@ Ext.define('Jdeveloper.view.login.LoginController',{
                               buttons: Ext.Msg.OK       
                          });
 
-              /*             
-                this.getView().unmask();
-
-                var result = Jdeveloper.util.Util.decodeJSON(action.response.responseText);
-
-                switch(action.failureType){                
-
-                        case Ext.form.action.Action.CLIENT_INVALID:                         
-                        Jdeveloper.util.Util.showErrorMsg('Le formulaire ne peut etre soumis avec des donnees invalides');
-                        break;
-                        case Ext.form.action.Action.CONNECT_FAILURE:
-                                Jdeveloper.util.Util.showErrorMsg(action.response.responseText);    
-                        break;
-                        case Ext.form.action.Action.SERVER_INVALID:
-                                //console.log(action);
-                                Jdeveloper.util.Util.showErrorMsg(result.msg);*/
                 }
         },
 
         onLoginSuccess: function(form, action){
-
-             //   this.getView().unmask();
 
                 this.getView().close();
                 Ext.create('Jdeveloper.view.main.Main');
