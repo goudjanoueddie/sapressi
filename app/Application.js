@@ -26,11 +26,12 @@ Ext.define('Jdeveloper.Application', { //1
         
     ],
 
-  /*   controllers:[ //4
-        'Root'
+     controllers:[ //4
+        //'Root',
+        'Menu'
     ],
 
-    stores: [ //5
+   /* stores: [ //5
         
     ],
     */

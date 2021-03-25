@@ -5,9 +5,11 @@ function retrievePermissions($userName){
     require('../db/db.php');
 
     $sqlQuery = "SELECT p.menu_id menuId FROM user u ";
-    $sqlQuery .= "INNER JOIN permissions p ON u.groups_id = p.groups_id ";
+    $sqlQuery .= "INNER JOIN permissions p ON u.Group_id = p.groups_id ";
     $sqlQuery .= "INNER JOIN menu m ON p.menu_id = m.id ";
     $sqlQuery .= "WHERE u.username = '$userName' ";
+
+    //echo $sqlQuery;
 
     $permissions = [];
 

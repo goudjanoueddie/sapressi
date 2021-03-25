@@ -13,7 +13,8 @@ Ext.define('Jdeveloper.view.main.Main', {
         'Jdeveloper.view.main.MainModel',
         'Jdeveloper.view.main.Footer',
         'Jdeveloper.view.main.Panel',
-        'Jdeveloper.view.main.Header'
+        'Jdeveloper.view.main.Header',
+        'Jdeveloper.view.menu.Accordion'
     ],
 
     plugins:'viewport',
@@ -42,7 +43,8 @@ Ext.define('Jdeveloper.view.main.Main', {
         region:'south'
 
     },{
-        xtype:'container',
+        //xtype:'container',
+        xtype:'mainmenu',
         region:'west',
         width:200,
         split:true

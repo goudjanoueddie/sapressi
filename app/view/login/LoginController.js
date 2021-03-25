@@ -5,7 +5,8 @@ Ext.define('Jdeveloper.view.login.LoginController',{
         requires:[
 
                 'Jdeveloper.view.login.CapsLockTooltip',
-                'Jdeveloper.util.Util'
+                'Jdeveloper.util.Util',
+                'Jdeveloper.util.SessionMonitor'
 
         ],
 
@@ -113,6 +114,7 @@ Ext.define('Jdeveloper.view.login.LoginController',{
 
                 this.getView().close();
                 Ext.create('Jdeveloper.view.main.Main');
+                Jdeveloper.util.SessionMonitor.start();
         }
 
 
