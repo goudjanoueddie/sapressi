@@ -1,4 +1,4 @@
-translations = {
+var translations = {
     login:"Login",
     user:"Utlisateur",
     password:"Mot de Passe",
@@ -12,7 +12,9 @@ translations = {
     capsLockMsg1: 'Avoir la touche majuscule active ',
     capsLockMsg2: 'peut entrainer un motde passe incorrecte',
     capsLockMsg3: 'Vousdevrez la desactiver pourentrer un mot de passe correcte',
-    capsLockMsg4: ''
+    capsLockMsg4: '',
+
+    menu:'menu'
     
 
 };

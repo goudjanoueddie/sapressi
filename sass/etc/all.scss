@@ -29,14 +29,19 @@
 
 .x-message-box .x-window-body .x-box-inner{
 
-    min-height: 110px !important;
-    //min-width:300px !important;
+    //min-height: 110px !important;
+    min-width:300px !important;
 }
 
 .x-splash-icon{
 
     background-image: url('images/app/sappressilogo.png') !important;
-    margin-top: -30px;
+    
+    /*margin-top: -30px;
+    height:150px;
+    width:326 px;*/
+
+    margin-top: -40px;
     height:150px;
     width:326 px;
 }

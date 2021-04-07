@@ -1,5 +1,3 @@
-
-
 function loadLocale(){
     var lang = localStorage ? (localStorage.getItem('user-lang') || 'ci') : 'ci',
     file = Ext.util.Format.format("resources/locale/{0}.js", lang);
@@ -14,12 +12,18 @@ function loadLocale(){
 
     loadLocale();
 
-    
-
+//Ext.require('Jdeveloper.view.security.UserForm');
+//Ext.require('Jdeveloper.view.security.User')
 Ext.define('Jdeveloper.Application', { //1
     extend: 'Ext.app.Application',
     
     name: 'Jdeveloper', //2
+
+    requires:[
+
+        'Jdeveloper.overrides.tree.ColumnOverride'
+
+    ],
 
    views:[ //3
         'login.Login'

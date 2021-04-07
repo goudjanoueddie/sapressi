@@ -5,7 +5,7 @@ Ext.define('Jdeveloper.view.menu.Accordion',{
     width:300,
     layout:{
         type:'accordion',
-        multi:true
+        multi:false
     },
 
     collapsible:true,

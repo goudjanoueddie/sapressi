@@ -9,7 +9,7 @@ Ext.define('Jdeveloper.view.login.CapsLockTooltip',{
     anchorOffset:0,
     width:300,
     dismissDelay:0,
-    autoHide:false,
+    autoHide:false
 
     /*title:'<div class="fa fa-exclamation-triangle">'+ translations.capsLockTitle + '</div>',
 

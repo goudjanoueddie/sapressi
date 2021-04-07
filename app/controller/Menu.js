@@ -6,10 +6,16 @@ Ext.define('Jdeveloper.controller.Menu',{
         'Menu'
     ],
 
+    refs: [
+        {
+            ref: 'mainPanel',
+            selector: 'mainpanel'
+        }
+    ],
+
 
     renderDynamicMenu:function(view,options){
 
-        console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
         var dynamicMenus=[];
         view.body.mask('Loading Menus... Please wait...');
 
@@ -54,6 +60,29 @@ Ext.define('Jdeveloper.controller.Menu',{
 
 
     onTreePanelItemClick:function(view,record,item,index,event,options){
+
+        var mainPanel=this.getMainPanel();
+
+        var newTab = mainPanel.items.findBy(
+
+            function(tab){
+                return tab.title === record.get('text');
+            }
+        );
+
+        if(!newTab){
+
+            newTab = mainPanel.add({ 
+                xtype: record.get('className'), 
+                closable: true, 
+                glyph: record.get('glyph'), 
+                title: record.get('text')
+
+        });
+
+    }
+
+    mainPanel.setActiveTab(newTab);
 
     },
 

@@ -56,7 +56,7 @@ Ext.define('Jdeveloper.view.login.Login',{
                 {
                     name:'user',
                     //fieldLabel:translations.user,
-                    fieldLabel:"utilisateur",
+                    fieldLabel:"Utilisateur",
                     vtype:'alphanum',
                     maxLength:25
                 },
@@ -95,7 +95,7 @@ Ext.define('Jdeveloper.view.login.Login',{
                             xtype:'button',
                             iconCls:'fa fa-times fa-lg',
                             //text:translations.cancel,
-                            text:"cancel",
+                            text:"Annuler",
                             listeners:{click:'onButtonClickAnnuler'}
                         },
                         {
