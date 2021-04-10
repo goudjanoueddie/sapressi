@@ -23,6 +23,8 @@ Ext.define('Jdeveloper.view.security.UserController',{
         records= me.getRecordsSelected();
 
         if(records[0]){
+            console.log('record selected');
+            console.log(records[0]);
             me.createDialog(records[0]);
         }
     },
@@ -32,13 +34,11 @@ Ext.define('Jdeveloper.view.security.UserController',{
         var me = this,
             view = me.getView();
 
-        //console.log(record);
-
         me.dialog = view.add({
             xtype:'user-form',
             viewModel: {
                 data: {
-                    title: record ? 'Edit: ' + record.get('name') : 'Ajouter Utilisateur',
+                    title: record ? 'Edit: '+ record.get('name'):'Ajouter Utilisateur',
                     currentUser: record || new Jdeveloper.model.security.User
                     
                 }
@@ -61,8 +61,8 @@ Ext.define('Jdeveloper.view.security.UserController',{
         store = me.getStore('users');      //#2
     if (store.getCount() >= 2 && records.length){ //#3
         Ext.Msg.show({
-            title:'Delete?', //#4
-            msg: 'Are you sure you want to delete?',
+            title:'Suppression?', //#4
+            msg: 'Etes vous certain de vouloir supprimer?',
             buttons: Ext.Msg.YESNO,
             icon: Ext.Msg.QUESTION,
             fn: function (buttonId){
@@ -74,8 +74,8 @@ Ext.define('Jdeveloper.view.security.UserController',{
         });
     } else if (store.getCount() === 1) { //#8
         Ext.Msg.show({
-            title:'Warning',
-            msg: 'You cannot delete all the users from the application.',
+            title:'Attention',
+            msg: 'Vous ne pouvez pas supprimer tous les utilisateurs',
             buttons: Ext.Msg.OK,
             icon: Ext.Msg.WARNING
     });
@@ -107,10 +107,9 @@ Ext.define('Jdeveloper.view.security.UserController',{
     onSaveSuccess:function(form,action){
         var me = this;
         me.onCancel();
-        me.refresh();
+        //me.refresh();
         Jdeveloper.util.Util.showToast('Succes! Utilisateur enregistre.');
-
-
+        //me.refresh();
     },
 
     onSaveFailure:function(form,action){
@@ -123,9 +122,9 @@ Ext.define('Jdeveloper.view.security.UserController',{
     },
 
     refresh:function(button,e,options){
-        /*var me = this,
+        var me = this,
         store=me.getStore('users');
-        store.load();*/
+        store.load();
     },
 
     onFileFieldChange: function(fileField, value, options) {
@@ -139,7 +138,7 @@ Ext.define('Jdeveloper.view.security.UserController',{
             };
             reader.readAsDataURL(file);          //#7
         } else if (!(/image/i).test(file.type)){ //#8
-            Ext.Msg.alert(translations.userPicUploadWarningTitle, translations.userPicUploadWarningBody);
+            Ext.Msg.alert('Attention', 'Vous pouvez uplaodez que des fichiers images!');
             fileField.reset();                   //#9
         }
 

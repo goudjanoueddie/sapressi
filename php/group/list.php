@@ -3,7 +3,7 @@
 require("../db/db.php");
 
 session_start();
-//echo('************************test Group ************************************');
+
 $sql = 'SELECT * FROM groupuser';
 
 if (isset($_GET['id'])) {

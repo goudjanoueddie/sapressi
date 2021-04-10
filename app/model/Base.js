@@ -4,7 +4,8 @@ Ext.define('Jdeveloper.model.Base',{
     requires:[
         'Jdeveloper.util.Util',
         'Ext.data.proxy.Ajax',
-        'Ext.data.reader.Json'
+        'Ext.data.reader.Json',
+        'Jdeveloper.ux.data.writer.AssociatedWriter'
     ],
 
 

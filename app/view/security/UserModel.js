@@ -5,8 +5,9 @@ Ext.define('Jdeveloper.view.security.UserModel',{
 
     requires:[
 
-        'Jdeveloper.model.security.Group',
-        'Jdeveloper.model.security.User'
+        'Jdeveloper.model.security.User',
+        'Jdeveloper.model.security.Group'
+        
         
     ],
 
@@ -27,7 +28,7 @@ Ext.define('Jdeveloper.view.security.UserModel',{
 
         users:{
             model:'Jdeveloper.model.security.User',
-            //fields:['name','userName','email','picture','Group_id'],
+            fields:['name','userName','email','picture','Group_id'],
 
             proxy:{
                 type:'ajax',
@@ -42,7 +43,7 @@ Ext.define('Jdeveloper.view.security.UserModel',{
             },
 
            
-
+            autoLoad:true
         },
 
         groups:{

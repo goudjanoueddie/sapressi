@@ -62,7 +62,7 @@ Ext.define('Jdeveloper.view.login.LoginController',{
                 var me = this,
                 form = me.lookupReference('form');
 
-                this.getView().mask('Authentification ... Patientez s\'il vousp plait');
+                //this.getView().mask('Authentification ... Patientez s\'il vous plait');
                 form.submit({
                         
                         clientValidation: true,
@@ -71,6 +71,8 @@ Ext.define('Jdeveloper.view.login.LoginController',{
                         success: 'onLoginSuccess',
                         failure: 'onLoginFailure'
                         });
+
+                        
         },
 
         onLoginFailure:function(form, action){
@@ -108,6 +110,8 @@ Ext.define('Jdeveloper.view.login.LoginController',{
                          });
 
                 }
+
+                this.lookupReference('form').reset();
         },
 
         onLoginSuccess: function(form, action){

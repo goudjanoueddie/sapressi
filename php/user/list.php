@@ -3,36 +3,36 @@
 require("../db/db.php");
 
 session_start();
-/*if(empty($_SESSION["username"])){
+
+if(empty($_SESSION["username"])) {
     header("HTTP/1.0 403 Forbidden");
     exit;
-}*/
+}
 
-//echo('************************test test ************************************');
-//$groupId = isset($_REQUEST['group']);
+$groupId = isset($_REQUEST['group']);
 
 $sql = "SELECT id, name, userName, email, picture, Group_id FROM user";
 
-if($groupId){
+if ($groupId) {
     $sql .= " WHERE Group_id = '$groupId'";
 }
 
 $result = array();
 
-if($resultdb = $mysqli ->query($sql)){
+if ($resultdb = $mysqli->query($sql)) {
 
-    while($profile = $resultdb -> fetch_assoc()){
+    while($profile = $resultdb->fetch_assoc()) {
 
-        $sqlQuery = "SELECT * FROM groupuser WHERE id =".$profile['Group_id'];
 
-        if($resultDb1 = $mysqli -> query($sqlQuery)){
-            while($item = $resultDb1->fetch_assoc()){
+        $sqlQuery = "SELECT * FROM groupuser WHERE id = " . $profile['Group_id'];
+
+        if ($resultDb1 = $mysqli->query($sqlQuery)) {
+            while ($item = $resultDb1->fetch_assoc()) {
                 $profile['group'] = $item;
             }
         }
 
-        $result[]=$profile;
-
+        $result[] = $profile;
     }
 
     $resultdb->close();
@@ -41,8 +41,9 @@ if($resultdb = $mysqli ->query($sql)){
 echo json_encode(array(
     "success" => $mysqli->connect_errno == 0,
     "data" => $result
-    ));
+));
 
-/*close connection*/
-$mysqli ->close();
+/* close connection */
+$mysqli->close();
 
+?>

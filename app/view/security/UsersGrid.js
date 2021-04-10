@@ -27,7 +27,7 @@ Ext.define('Jdeveloper.view.security.UsersGrid',{
 
         {
             width:150,
-            dataIndex:'Group_id',
+            dataIndex:'groupName',
             text:'Group'
         }
     ]
