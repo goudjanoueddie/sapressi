@@ -920,6 +920,10 @@ $include-jdeveloper-model-staticdata-commerciaux: true;
 $include-jdeveloper-model-staticdata-prospection: true;
 $include-jdeveloper-overrides-tree-columnoverride: true;
 $include-jdeveloper-store-menu: true;
+$include-jdeveloper-store-staticdata-base: true;
+$include-jdeveloper-store-staticdata-clients: true;
+$include-jdeveloper-store-staticdata-commerciaux: true;
+$include-jdeveloper-store-staticdata-prospection: true;
 $include-jdeveloper-util-glyphs: true;
 $include-jdeveloper-util-sessionmonitor: true;
 $include-jdeveloper-util-util: true;
@@ -942,6 +946,9 @@ $include-jdeveloper-view-security-usercontroller: true;
 $include-jdeveloper-view-security-userform: true;
 $include-jdeveloper-view-security-usermodel: true;
 $include-jdeveloper-view-security-usersgrid: true;
+$include-jdeveloper-view-staticdata-basegrid: true;
+$include-jdeveloper-view-staticdata-clients: true;
+$include-jdeveloper-view-staticdata-commerciaux: true;
 
 
 /* ======================== ETC ======================== */

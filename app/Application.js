@@ -12,8 +12,7 @@ function loadLocale(){
 
     loadLocale();
 
-//Ext.require('Jdeveloper.view.security.UserForm');
-//Ext.require('Jdeveloper.view.security.User')
+Ext.require('Jdeveloper.view.staticData.Clients') 
 Ext.define('Jdeveloper.Application', { //1
     extend: 'Ext.app.Application',
     

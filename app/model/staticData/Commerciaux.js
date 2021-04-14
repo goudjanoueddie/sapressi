@@ -6,6 +6,8 @@ Ext.define('Jdeveloper.model.staticData.Commerciaux',{
     idProperty: 'id_commerciaux',
 
     fieds:[
+        {name:'id_commerciaux'},
+        {name:'nom'},
         {name:'nom'},
         {name:'prenom'},
         {name:'contacts'},

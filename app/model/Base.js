@@ -2,16 +2,15 @@ Ext.define('Jdeveloper.model.Base',{
     extend:'Ext.data.Model',
 
     requires:[
-        'Jdeveloper.util.Util',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json',
+        'Jdeveloper.util.Util',
         'Jdeveloper.ux.data.writer.AssociatedWriter'
     ],
 
 
     schema:{
         namespace:'Jdeveloper.model',
-       // namespace:'Jdeveloper.model',
         urlPrefix:'php',
         proxy:{
             type:'ajax',
@@ -30,6 +29,7 @@ Ext.define('Jdeveloper.model.Base',{
             },
             writer:{
                 type:'associatedjson',
+                //type:'json',
                 writeAllFields:true,
                 encode:true,
                 rootProperty:'data',

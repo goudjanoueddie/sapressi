@@ -6,6 +6,7 @@ Ext.define('Jdeveloper.model.staticData.Prospection',{
     idProperty:'id_prospection',
 
     fields:[
+        {name:'id_prospection'},
         {name:'date_prospection',type:'date'},
         {name:'objectif_prospection'},
         {name:'besoins_attente_client'},
